@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php -r \"print_r\\(PDO::getAvailableDrivers\\(\\)\\);\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"http://localhost:8080/?client_id=1\")",
+      "Bash(curl -s \"http://localhost:8080/?client_id=1\" 2>&1 | head -50)",
+      "Bash(mysql -u root -e \"SELECT 1;\" 2>&1 || mysql -u root -proot -e \"SELECT 1;\" 2>&1)",
+      "Bash(php -r \"\n\\\\$pdo = new PDO\\('mysql:host=127.0.0.1;port=3306', 'root', 'root'\\);\n\\\\$pdo->exec\\('CREATE DATABASE IF NOT EXISTS review_service CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci'\\);\necho 'Database created';\n\" 2>&1)",
+      "Bash(start \"\" \"http://localhost:8080/?client_id=1\" 2>&1 || explorer \"http://localhost:8080/?client_id=1\" 2>&1)",
+      "Bash(netstat -ano | grep :8080)",
+      "Bash(taskkill /PID 23080 /F 2>&1)",
+      "Bash(cmd.exe /c \"taskkill /PID 23080 /F\")",
+      "Bash(cmd.exe /c \"taskkill /PID 23080 /F 2>&1\")",
+      "Bash(cmd.exe /c \"tasklist | findstr php\")"
+    ]
+  }
+}

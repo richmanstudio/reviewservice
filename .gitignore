@@ -1,0 +1,4 @@
+vendor/
+storage/*.db
+docx_content.txt
+~$*
